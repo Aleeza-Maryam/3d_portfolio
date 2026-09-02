@@ -1,4 +1,55 @@
 export default function Home() {
+  const projects = [
+    {
+      title: "FlyRank Content Opportunity Scoring",
+      description:
+        "ML and data analytics project analyzing content performance data to identify and rank content opportunities for refresh and optimization.",
+      tech: ["Python", "DuckDB", "Pandas", "Scikit-learn", "Hugging Face"],
+      github: "https://github.com/Aleeza-Maryam/Aleeza-ML-Internship-WEEK1",
+      color: "#00d4ff",
+    },
+    {
+      title: "HealthMate - AI Symptom Checker",
+      description:
+        "Android app for preliminary health assessment using TensorFlow Lite. Predicts diseases from symptoms with confidence scores.",
+      tech: ["Python", "TensorFlow", "Android", "Kotlin", "ML"],
+      github: "https://github.com/Aleeza-Maryam/HealthMate",
+      color: "#7c3aed",
+    },
+    {
+      title: "TradeBot - Trading Simulator",
+      description:
+        "Console-based trading simulator using MongoDB for portfolio management. Containerized with Docker for consistent environment.",
+      tech: ["Python", "MongoDB", "Docker", "CLI"],
+      github: "https://github.com/Aleeza-Maryam/TradeBott",
+      color: "#ec4899",
+    },
+    {
+      title: "AI Interview Coach Platform",
+      description:
+        "Web platform that generates interview questions and evaluates answers via text/speech with dynamic follow-up questions.",
+      tech: ["React", "Node.js", "AI/ML", "Speech-to-Text"],
+      github: "https://github.com/Aleeza-Maryam/AI-Interview-Coach-Platform-Web-Engineering-Project",
+      color: "#f59e0b",
+    },
+    {
+      title: "Ride-Sharing SQL Analytics",
+      description:
+        "Relational database system managing ride-sharing data including passengers, drivers, rides, payments, and ratings.",
+      tech: ["SQL", "Database Design", "Data Analytics"],
+      github: "https://github.com/Aleeza-Maryam/Ride-Sharing-SQL-Analytics",
+      color: "#10b981",
+    },
+    {
+      title: "Woolley Wonders - Crochet Website",
+      description:
+        "Small business e-commerce website for handcrafted crochet products with a modern, user-friendly interface.",
+      tech: ["HTML", "CSS", "JavaScript", "Web Design"],
+      github: "https://github.com/Aleeza-Maryam/woolley-wonders",
+      color: "#f472b6",
+    },
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -134,6 +185,114 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="section-padding container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          <span className="text-[#7c3aed]">My</span>{" "}
+          <span className="text-white">Tech Stack</span>
+        </h2>
+        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          Technologies I work with to build data-driven solutions and intelligent systems
+        </p>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {[
+            { name: "Python", color: "#3776AB" },
+            { name: "SQL", color: "#4479A1" },
+            { name: "Pandas", color: "#150458" },
+            { name: "NumPy", color: "#013243" },
+            { name: "Scikit-learn", color: "#F7931E" },
+            { name: "Power BI", color: "#F2C811" },
+            { name: "MySQL", color: "#4479A1" },
+            { name: "MongoDB", color: "#47A248" },
+            { name: "React", color: "#61DAFB" },
+            { name: "JavaScript", color: "#F7DF1E" },
+            { name: "Git", color: "#F05032" },
+            { name: "Docker", color: "#2496ED" },
+            { name: "C++", color: "#00599C" },
+            { name: "HTML", color: "#E34F26" },
+            { name: "CSS", color: "#1572B6" },
+            { name: "Hugging Face", color: "#FFD21E" },
+          ].map((skill, index) => (
+            <div
+              key={skill.name}
+              className="glass rounded-xl p-4 text-center glow-border hover:scale-105 transition-transform cursor-default group"
+            >
+              <div
+                className="w-12 h-12 mx-auto rounded-full flex items-center justify-center text-2xl font-bold mb-2"
+                style={{
+                  background: `linear-gradient(135deg, ${skill.color}22, ${skill.color}11)`,
+                  border: `1px solid ${skill.color}44`,
+                }}
+              >
+                <span style={{ color: skill.color }}>
+                  {skill.name.charAt(0)}
+                </span>
+              </div>
+              <p className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                {skill.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="section-padding container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          <span className="text-[#00d4ff]">Featured</span>{" "}
+          <span className="text-white">Projects</span>
+        </h2>
+        <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+          A selection of my work in Data Science, AI/ML, and Web Development
+        </p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div
+              key={project.title}
+              className="glass rounded-2xl p-6 glow-border hover:shadow-xl hover:shadow-[#00d4ff]/5 transition-all group"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-3 h-3 rounded-full"
+                  style={{ backgroundColor: project.color }}
+                />
+                <h3 className="text-lg font-semibold text-white group-hover:text-[#00d4ff] transition-colors">
+                  {project.title}
+                </h3>
+              </div>
+
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-2 py-1 text-xs rounded-full bg-[#00d4ff]/10 text-[#00d4ff] border border-[#00d4ff]/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.github}
+                target="_blank"
+                className="text-sm text-gray-400 hover:text-[#00d4ff] transition-colors flex items-center gap-1"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.15 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.62.24 2.85.12 3.15.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                View Code
+              </a>
+            </div>
+          ))}
         </div>
       </section>
     </>
