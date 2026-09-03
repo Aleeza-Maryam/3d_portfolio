@@ -1,9 +1,21 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --color-cyber-dark: #111827;
-  --color-cyber-pink: #E91E63;
-  --color-cyber-cyan: #00E5FF;
+:root {
+  --primary: #ffffff;
+  --secondary: #94a3b8;
+  --accent: #3b82f6;
+  --accent-soft: #8b5cf6;
+  --bg: #0a0a0a;
+  --card: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -11,8 +23,90 @@ html {
 }
 
 body {
-  background: var(--color-cyber-dark);
-  color: #e2e8f0;
+  background: var(--bg);
+  color: var(--primary);
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
+}
+
+.gradient-bg {
+  background: radial-gradient(ellipse at 50% 0%, #1a1a2e 0%, #0a0a0a 70%);
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.glass:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #3b82f6;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 640px) {
+  .section-padding {
+    padding: 60px 0;
+  }
 }
