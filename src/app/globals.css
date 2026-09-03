@@ -11,7 +11,21 @@
   --card: rgba(255, 255, 255, 0.05);
   --border: rgba(255, 255, 255, 0.08);
 }
+/* 3D Card Effect */
+.card-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
 
+.card-3d:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15);
+}
+
+.card-3d .card-content {
+  transform: translateZ(20px);
+}
 * {
   margin: 0;
   padding: 0;
