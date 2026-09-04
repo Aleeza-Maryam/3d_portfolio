@@ -423,8 +423,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
 {/* Certifications Section */}
+
 <motion.section
   id="certifications"
   className="section-padding container mx-auto px-4 md:px-8"
@@ -441,49 +441,82 @@ export default function Home() {
     Professional certifications that validate my skills and expertise
   </p>
 
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    {[
-      {
-        name: "Open Science 101",
-        issuer: "NASA - Transform to Open Science",
-      },
-      {
-        name: "Data Analytics Job Simulation",
-        issuer: "Deloitte via Forage",
-      },
-      {
-        name: "SQL for Data Science",
-        issuer: "Saylor Academy",
-      },
-      {
-        name: "AI Foundations",
-        issuer: "Oracle",
-      },
-      {
-        name: "Linux Unhatched",
-        issuer: "Cisco Networking Academy",
-      },
-      {
-        name: "Web Development & AI/ML",
-        issuer: "Remote Internship Programs (2024-2025)",
-      },
-    ].map((cert, index) => (
-      <div
-        key={cert.name}
-        className="glass rounded-2xl p-6 glow-border hover:shadow-xl transition-all group card-3d"
-      >
-        <div className="flex items-start gap-3">
-          <div className="w-1 h-12 bg-gradient-to-b from-[#3b82f6] to-[#8b5cf6] rounded-full flex-shrink-0" />
-          <div>
-            <h3 className="text-base font-semibold text-white group-hover:text-[#3b82f6] transition-colors">
-              {cert.name}
-            </h3>
-            <p className="text-[#94a3b8] text-sm mt-1">{cert.issuer}</p>
-          </div>
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+  {[
+    {
+      name: "Open Science 101",
+      issuer: "NASA - Transform to Open Science",
+      file: "/certificates/nasa-open-science.pdf",
+      year: "2025",
+    },
+    {
+      name: "Data Analytics Job Simulation",
+      issuer: "Deloitte via Forage",
+      file: "/certificates/deloitte-analytics.pdf",
+      year: "2025",
+    },
+    {
+      name: "SQL for Data Science",
+      issuer: "Saylor Academy",
+      file: "/certificates/saylor-sql.pdf",
+      year: "2025",
+    },
+    {
+      name: "AI Foundations",
+      issuer: "Oracle",
+      file: "/certificates/oracle-ai.pdf",
+      year: "2025",
+    },
+    {
+      name: "Linux Unhatched",
+      issuer: "Cisco Networking Academy",
+      file: "/certificates/linux_unhatcheds.pdf",
+      year: "2025",
+    },
+    {
+      name: "Web Development & AI/ML",
+      issuer: "Remote Internship Programs",
+      file: "/certificates/remote-internship.pdf",
+      year: "2024-2025",
+    },
+  ].map((cert) => (
+    <div
+      key={cert.name}
+      className="glass rounded-2xl p-6 glow-border hover:shadow-xl transition-all group card-3d flex flex-col justify-between"
+    >
+      <div>
+        {/* PDF Box ohne Scrollbars */}
+        <div className="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-[#0a0a0a] border border-[#3b82f6]/10">
+          <iframe
+            src={`${cert.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+            className="w-[calc(100%+30px)] h-[calc(100%+30px)] -m-[15px] pointer-events-none border-none"
+            title={cert.name}
+            scrolling="no"
+          />
+        </div>
+
+        {/* Details */}
+        <div>
+          <h3 className="text-base font-semibold text-white group-hover:text-[#3b82f6] transition-colors">
+            {cert.name}
+          </h3>
+          <p className="text-[#94a3b8] text-sm mt-1">{cert.issuer}</p>
+          <p className="text-[#64748b] text-xs mt-2">{cert.year}</p>
         </div>
       </div>
-    ))}
-  </div>
+
+      {/* Button */}
+      <a
+        href={cert.file}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 inline-flex items-center justify-center w-full px-4 py-2 text-xs font-medium text-[#3b82f6] bg-[#3b82f6]/10 hover:bg-[#3b82f6]/20 border border-[#3b82f6]/20 rounded-lg transition-colors"
+      >
+        View Full Certificate ↗
+      </a>
+    </div>
+  ))}
+</div>
 </motion.section>
 {/* Languages Section */}
 <motion.section
