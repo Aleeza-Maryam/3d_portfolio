@@ -94,11 +94,11 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-   
-            {/* Hero Section */}
-            {/* Hero Section */}
-          {/* Hero Section */}
-    
+   <motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
       
     <section id="home" className="min-h-screen flex items-center justify-center section-padding relative overflow-hidden">
   <Particles />
@@ -265,8 +265,7 @@ export default function Home() {
     ))}
   </div>
 </motion.section>
-      {/* Projects Section */}
-    {/* Projects Section */}
+{/* Projects Section */}
 <motion.section
   id="projects"
   className="section-padding container mx-auto px-4 md:px-8"
@@ -284,10 +283,23 @@ export default function Home() {
   </p>
 
   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {projects.map((project) => (
-      <div
+    {projects.map((project, index) => (
+      <motion.div
         key={project.title}
-        className="glass rounded-2xl p-6 glow-border hover:shadow-xl transition-all group card-3d"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ 
+          duration: 0.6,
+          delay: index * 0.1,
+          type: "spring",
+          stiffness: 100
+        }}
+        viewport={{ once: true }}
+        whileHover={{ 
+          scale: 1.03,
+          transition: { duration: 0.2 }
+        }}
+        className="glass rounded-2xl p-6 glow-border group card-3d"
       >
         <div className="flex items-center gap-3 mb-3">
           <div
@@ -324,11 +336,10 @@ export default function Home() {
           </svg>
           View Code
         </a>
-      </div>
+      </motion.div>
     ))}
   </div>
 </motion.section>
-
       {/* Experience Section */}
       <section id="experience" className="section-padding container mx-auto px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
@@ -554,6 +565,7 @@ export default function Home() {
     ))}
   </div>
 </motion.section>
+</motion.div>
       {/* Contact Section */}
       <section id="contact" className="section-padding container mx-auto px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
