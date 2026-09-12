@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
-  { name: "Certifications", href: "#certifications" }, // Add this
+  { name: "Certifications", href: "#certifications" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -28,16 +29,16 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-[#00d4ff]/10"
+          ? "bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-[#3b82f6]/10"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link href="#home" className="text-xl font-bold">
-          <span className="text-[#00d4ff]">A</span>
+          <span className="text-[#3b82f6]">A</span>
           <span className="text-white">leeza</span>
-          <span className="text-[#7c3aed]">.</span>
+          <span className="text-[#8b5cf6]">.</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -46,10 +47,10 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm text-gray-400 hover:text-[#00d4ff] transition-colors relative group"
+              className="text-sm text-gray-400 hover:text-[#3b82f6] transition-colors relative group"
             >
               {item.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#00d4ff] transition-all group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#3b82f6] transition-all group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -58,7 +59,7 @@ export default function Navbar() {
         <a
           href="/resume/AleezaMaryam_Resume.pdf"
           target="_blank"
-          className="hidden md:block px-4 py-2 text-sm font-medium text-white border border-[#00d4ff]/30 rounded-full hover:bg-[#00d4ff]/10 transition-all"
+          className="hidden md:block px-4 py-2 text-sm font-medium text-white border border-[#3b82f6]/30 rounded-full hover:bg-[#3b82f6]/10 transition-all"
         >
           Resume
         </a>
@@ -67,6 +68,7 @@ export default function Navbar() {
         <button
           onClick={() => setMobileMenu(!mobileMenu)}
           className="md:hidden text-white"
+          aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
@@ -76,14 +78,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[#00d4ff]/10">
+        <div className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-xl border-b border-[#3b82f6]/10">
           <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 onClick={() => setMobileMenu(false)}
-                className="text-gray-400 hover:text-[#00d4ff] transition-colors"
+                className="text-gray-400 hover:text-[#3b82f6] transition-colors"
               >
                 {item.name}
               </Link>
@@ -91,7 +93,7 @@ export default function Navbar() {
             <a
               href="/resume/AleezaMaryam_Resume.pdf"
               target="_blank"
-              className="px-4 py-2 text-center text-sm font-medium text-white border border-[#00d4ff]/30 rounded-full hover:bg-[#00d4ff]/10 transition-all"
+              className="px-4 py-2 text-center text-sm font-medium text-white border border-[#3b82f6]/30 rounded-full hover:bg-[#3b82f6]/10 transition-all"
             >
               Resume
             </a>
