@@ -34,6 +34,14 @@ const projects = [
     color: "#8b5cf6",
   },
   {
+    title: "AlphaSignal",
+    description:
+      "AlphaSignal is a professional-grade financial intelligence platform that transforms raw market data into clear, actionable investment signals. It leverages the power of agentic AI to analyze stocks the way a professional analyst would — fetching data, reading news, running technical analysis, and generating structured investment recommendations.",
+    tech: ["Python", "Streamlit 1.63", "LangChain 0.3", "LangGraph 0.2", "GROQ", "QUEN"],
+    github: "https://github.com/Aleeza-Maryam/agentic-finance-dashboard",
+    color: "#151874",
+  },
+  {
     title: "E-Commerce Website",
     description:
       "PHP-based online store with product catalog, categories, best sellers, shopping cart, checkout flow, and user authentication. Features dynamic product browsing and image uploads.",
@@ -610,6 +618,18 @@ const projects = [
         name: "AI Fluency for Small Businesses",
         issuer: "PayPal & Anthropic",
         file: "/certificates/anthropic-paypal-ai.jpg",
+        year: "2026",
+      },
+      {
+        name: "Data Labeling Job Simulation",
+        issuer: "Forage",
+        file: "/certificates/forage data labeling.pdf",
+        year: "2026",
+      },
+      {
+        name: "Data Science Job Simulation",
+        issuer: "British Airways via Forage",
+        file: "/certificates/british-airways-data-science.pdf",
         year: "2026",
       },
       {
