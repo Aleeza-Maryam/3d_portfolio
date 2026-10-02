@@ -115,6 +115,14 @@ const projects = [
     github: "https://github.com/Aleeza-Maryam/woolley-wonders",
     color: "#f472b6",
   },
+   {
+    title: "local-rag-assistant",
+    description:
+      "Contextual Q&A system with PDF citations using RAG.",
+    tech: ["Python", "ChromaDB", "GROQ"],
+    github: "https://github.com/Aleeza-Maryam/local-rag-assistant/",
+    color: "#072f11",
+  },
 ];
 
   const handleSubmit = async (e: React.FormEvent) => {
